@@ -1,4 +1,4 @@
-# Gaussian Mixture Model (GMM) Estimation
+# Estimation in Gaussian Mixture Model (GMM)
 
 In this repository, I'll introduce 2 methods for Gaussian Mixture Model (GMM) estimation - **EM algorithm** (expectation-maximization algorithm) and **variational inference** (variational Bayes).
 
