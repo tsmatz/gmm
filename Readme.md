@@ -12,7 +12,7 @@ GMM formula has summation (not multiplication) in distribution, and the log like
 **EM algorithm** is based on maximum likelihood framework, but there might have several difficulties in specific cases. For instance, when some data (observation) is same as a mean value of element in GMM, it might have a singularity, in which the likelihood goes to infinity at &sigma; = 0. (This won't occur in a single Gaussian distribution.)<br>
 When the number of data is insufficient, this method might also over-estimate the results.
 
-The motivation to apply **varietional Bayesian** is to mitigate this kind of over-estimating and [over-fitting](https://tsmatz.wordpress.com/2017/09/13/overfitting-for-regression-and-deep-learning/).
+The motivation to apply **variational Bayesian** (variational inference) is to mitigate this kind of over-estimating and [over-fitting](https://tsmatz.wordpress.com/2017/09/13/overfitting-for-regression-and-deep-learning/).
 
 > Note : See [here](https://tsmatz.wordpress.com/2017/08/30/glm-regression-logistic-poisson-gaussian-gamma-tutorial-with-r/) for the caveat of likelihood approach.
 
