@@ -1,4 +1,4 @@
-# Estimation in Gaussian Mixture Model (GMM)
+# Estimate Gaussian Mixture Model (GMM) - Python Example
 
 In this repository, I'll introduce 2 methods for Gaussian Mixture Model (GMM) estimation - **EM algorithm** (expectation-maximization algorithm) and **variational inference** (variational Bayes).
 
