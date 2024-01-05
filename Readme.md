@@ -6,7 +6,7 @@ To make you have a clear picture, I'll also give you mathematical descriptions, 
 - [EM Algorithm](./01-gmm-em-algorithm.ipynb)
 - [Variational Inference (Variational Bayesian)](02-gmm-variational-inference.ipynb)
 
-GMM formula has summation (not multiplication) in distribution, and the log likelihood will then lead to complex expression in regular [maximum likelihood estimation (MLE)](https://tsmatz.wordpress.com/2017/08/30/regression-in-machine-learning-math-for-beginners/). These 2 methods will then address this concern by procedural iterative algorithms (which approximates the optimal solutions).
+GMM formula has summation (not multiplication) in distribution, and the log likelihood will then lead to complex expression in regular [maximum likelihood estimation (MLE)](https://tsmatz.wordpress.com/2017/08/30/regression-in-machine-learning-math-for-beginners/). These 2 methods will then address this concern by procedural iterative algorithms (which approximate the optimal solutions).
 
 **EM algorithm** is based on maximum likelihood framework.<br>
 For this reason, there might have several difficulties in specific cases. For instance, when some data (observation) is same as a mean value of element in GMM, it might have a singularity, in which the likelihood goes to infinity at &sigma; = 0. (This won't occur in a single Gaussian distribution.)<br>
