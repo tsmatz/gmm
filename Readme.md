@@ -9,12 +9,15 @@ To make you have a clear picture, I'll also give you mathematical descriptions, 
 GMM formula has summation (not multiplication) in distribution, and the log likelihood will then lead to complex expression in regular [maximum likelihood estimation (MLE)](https://tsmatz.wordpress.com/2017/08/30/regression-in-machine-learning-math-for-beginners/). These 2 methods will then address this concern by procedural iterative algorithms (which approximate the optimal solutions).
 
 **EM algorithm** is an iterative method based on maximum likelihood framework.<br>
-For this reason, there might have several difficulties in specific cases. For instance, when some data (observation) is same as a mean value of element in GMM, it might have a singularity, in which the likelihood goes to infinity at &sigma; = 0. (This won't occur in a single Gaussian distribution.)<br>
-When the number of data is insufficient, this method might also over-estimate the results.
+This iterative algorithm is simple and light-weight compared to variational Bayesian. There might, however, have several difficulties in specific cases, because it's based on likelihood approach.<br>
+For instance, when some data (observation) is exactly same as a mean of some element in GMM, it might have a singularity, in which the likelihood goes to infinity at &sigma; = 0. (This won't occur in a single Gaussian distribution.)<br>
+When the number of data is insufficient, this method might also over-estimate the results.<br>
+In complex system, it will be infeasible (intractable) to evaluate the posterior distribution or compute the expectation of the complete-data log likelihood with respect to the posterior distribution of the latent variables, so EM algorithm cannot be used.
 
-The motivation to apply **variational Bayesian** (variational inference) is to mitigate this kind of over-estimating and [over-fitting](https://tsmatz.wordpress.com/2017/09/13/overfitting-for-regression-and-deep-learning/) by Bayesian approach.
+In **variational Bayesian** (variational inference), we can find an approximation for the posterior distribution as well as for the model evidence.<br>
+Variational Bayesian also avoids over-estimating and [over-fitting](https://tsmatz.wordpress.com/2017/09/13/overfitting-for-regression-and-deep-learning/) mentioned above, by applying Bayesian.
 
 > Note : See [here](https://tsmatz.wordpress.com/2017/08/30/regression-in-machine-learning-math-for-beginners/) for the caveat of likelihood approach.
 
-With Scikit-Learn package in Python, you can also use functions for both EM algorithm (```sklearn.mixture.GaussianMixture```) and variational Bayesian (```sklearn.mixture.BayesianGaussianMixture```) in GMM.<br>
-However, here I'll show you implementation from scratch in Python with mathematical explanations. By knowing mathematical background and implementation, these ideas can also be applied to other distributions - such as, mixtures of Bernoulli distributions, hidden Markov Models (HMM), etc. (See [here](https://github.com/tsmatz/hmm-lds-em-algorithm) for applying EM algorithms in HMM and LDS.)
+Here I show you the implementation from scratch in Python with mathematical explanations. But, with Scikit-Learn package in Python, you can also use functions for both EM algorithm (```sklearn.mixture.GaussianMixture```) and variational Bayesian (```sklearn.mixture.BayesianGaussianMixture```) in GMM.<br>
+By knowing mathematical background and implementation, these methods can also be applied to other distributions - such as, mixtures of Bernoulli distributions, hidden Markov Models (HMM), etc. (See [here](https://github.com/tsmatz/hmm-lds-em-algorithm) for applying EM algorithms in HMM and LDS.)
